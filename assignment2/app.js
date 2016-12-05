@@ -31,9 +31,8 @@ function ShoppingListCheckOffService() {
   this.alreadyBoughtItems = [];
 
   this.buy = function(index) {
-    var newItem = {name: this.toBuyItems[index].name, quantity: this.toBuyItems[index].quantity};
+    this.alreadyBoughtItems.push(this.toBuyItems[index]);
     this.toBuyItems.splice(index, 1);
-    this.alreadyBoughtItems.push(newItem);
   }
 
 }
