@@ -1,0 +1,6 @@
+Please click on a category to list the items.
+<ul>
+  <li ng-repeat="category in menudata.categories" >
+    <a ui-sref="items({category:category.short_name})"> {{ category.name }} </a>
+  </li>
+</ul>
