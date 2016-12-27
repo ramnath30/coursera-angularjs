@@ -1,0 +1,72 @@
+<div>
+  <form name="signupForm" novalidate>
+    <table>
+      <tr>
+        <td>First Name: </td>
+        <td class="input"><input size="30" name="firstName" placeholder="Min 1, Max 20 characters" type="text" required ng-minlength="1"
+          ng-maxlength="20" ng-model="signupCtrl.info.firstName"></td>
+          <td>
+            <span class="error" class="error" ng-if="signupForm.firstName.$error.required
+            && signupForm.firstName.$touched">
+            First Name is required.
+          </span>
+          <span class="error" ng-if="signupForm.firstName.$error.maxlength && signupForm.firstName.$touched">
+            First Name must not be more than 20 characters long.
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td>Last Name: </td>
+        <td class="input"><input size="30" placeholder="Min 2, Max 20 characters" name="lastName" type="text" required
+          ng-minlength="2" ng-maxlength="20" ng-model="signupCtrl.info.lastName"></td>
+          <td>
+            <span class="error" class="error" ng-if="(signupForm.lastName.$error.minlength ||
+            signupForm.lastName.$error.required) && signupForm.lastName.$touched">
+            Last Name must be at least 2 characters long.
+          </span>
+          <span class="error" ng-if="signupForm.lastName.$error.maxlength && signupForm.lastName.$touched">
+            Last Name must not be more than 20 characters long.
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td>Email: </td>
+        <td class="input"><input size="30" placeholder="userId@domain" name="email" type="email" required ng-model="signupCtrl.info.email"></td>
+        <td>
+          <span class="error" ng-if="signupForm.email.$invalid && signupForm.email.$touched">
+            Must be a valid email address: handle@domain format
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td>Phone Number: </td>
+        <td class="input"><input name="phone" size="30" type="text" required placeholder="###-###-####"
+          pattern="(\d{3})-(\d{3})-(\d{4})" ng-model="signupCtrl.info.phone"></td>
+          <td>
+            <span class="error" ng-if="signupForm.phone.$invalid && signupForm.phone.$touched">
+              Phone must be in the format ###-###-####.
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>Favorite Menu Item: </td>
+          <td class="input"><input type="text" placeholder="L1" ng-model="signupCtrl.info.favoriteItem"></td>
+          <td>
+            <span class="error" ng-if="signupCtrl.favoriteItemError">
+              No such menu number exists.
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="button" align="center"><input type="button" value="Save Info"
+            ng-disabled="signupForm.$invalid" ng-click="signupCtrl.saveInfo(signupCtrl.info);"
+          </td>
+          <td>
+            <span ng-if="signupCtrl.isSaved();">
+              Your information has been saved.
+            </span>
+          </td>
+          </tr>
+        </form>
+      </table>
+    </div>

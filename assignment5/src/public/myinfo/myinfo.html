@@ -1,0 +1,44 @@
+<div>
+  <div ng-if="myinfoCtrl.info.firstName == ''">
+    Not Signed Up Yet. Sign Up Now!
+  </div>
+  <table ng-if="myinfoCtrl.info.firstName != ''">
+    <tr>
+      <td>First Name: </td>
+      <td class="column">{{myinfoCtrl.info.firstName}}</td>
+    </tr>
+    <tr>
+      <td>Last Name: </td>
+      <td class="column">{{myinfoCtrl.info.lastName}}</td>
+    </tr>
+    <tr>
+      <td>Email: </td>
+      <td class="column">{{myinfoCtrl.info.email}}</td>
+    </tr>
+    <tr>
+      <td>Phone Number: </td>
+      <td class="column">{{myinfoCtrl.info.phone}}</td>
+    </tr>
+    <tr>
+      <td>Favorite Menu Item: </td>
+      <td class="column">{{myinfoCtrl.info.favoriteItem}}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="column">{{myinfoCtrl.favoriteData.name}}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="column">{{myinfoCtrl.favoriteData.description}}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="column">
+        <img ng-src='{{myinfoCtrl.ApiBasePath + "/images/" + myinfoCtrl.favoriteData.short_name + ".jpg"}}'>
+      </img></td>
+    </tr>
+
+
+  </table>
+
+</div>
