@@ -1,6 +1,6 @@
 <div>
   <div ng-if="myinfoCtrl.info.firstName == ''">
-    Not Signed Up Yet. Sign Up Now!
+    Not Signed Up Yet. <a ui-sref="public.signup">Sign Up Now!</a>
   </div>
   <table ng-if="myinfoCtrl.info.firstName != ''">
     <tr>
@@ -33,9 +33,9 @@
     </tr>
     <tr>
       <td></td>
-      <td class="column">
-        <img ng-src='{{myinfoCtrl.ApiBasePath + "/images/" + myinfoCtrl.favoriteData.short_name + ".jpg"}}'>
-      </img></td>
+      <td>
+        <img ng-src='{{myinfoCtrl.ApiBasePath + "/images/" + myinfoCtrl.favoriteData.short_name + ".jpg"}}'></img>
+      </td>
     </tr>
 
 
